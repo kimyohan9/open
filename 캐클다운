@@ -1,0 +1,13 @@
+import os
+
+def kaggle_download(dataset: str, download_path: str = r"C:\Users\kdygk\kaggle"):
+   
+    if not os.path.exists(download_path):
+        os.makedirs(download_path)
+    
+    # Kaggle 데이터셋 다운로드 명령 실행
+    command = f"kaggle datasets download {dataset} -p {download_path}"
+    os.system(command)
+
+    print(f"데이터셋 '{dataset}'이(가) '{download_path}' 경로에 다운로드되었습니다.")
+  
